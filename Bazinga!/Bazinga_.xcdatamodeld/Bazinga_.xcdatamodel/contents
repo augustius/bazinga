@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="13240" systemVersion="16G29" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="AccountDB" representedClassName="AccountDB" syncable="YES" codeGenerationType="class">
+        <attribute name="active" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="createdDate" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="childAccount" transient="YES" toMany="YES" deletionRule="Nullify" destinationEntity="SubaccountDB" inverseName="parentAccount" inverseEntity="SubaccountDB" syncable="YES"/>
+    </entity>
+    <entity name="SubaccountDB" representedClassName="SubaccountDB" parentEntity="AccountDB" syncable="YES" codeGenerationType="class">
+        <attribute name="subActive" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="subCreatedDate" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="subId" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="subName" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="parentAccount" transient="YES" maxCount="1" deletionRule="Nullify" destinationEntity="AccountDB" inverseName="childAccount" inverseEntity="AccountDB" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="AccountDB" positionX="-63" positionY="-18" width="128" height="120"/>
+        <element name="SubaccountDB" positionX="-54" positionY="18" width="128" height="120"/>
+    </elements>
+</model>
