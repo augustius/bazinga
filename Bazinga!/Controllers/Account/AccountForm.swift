@@ -19,3 +19,19 @@ class AccountForm: UIViewController{
     
     
 }
+
+// MARK: UITableViewDelegate method
+extension AccountForm: UITableViewDataSource,UITableViewDelegate{
+ 
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 0
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "AccountCell", for: indexPath)
+        
+        return cell
+    }
+    
+}

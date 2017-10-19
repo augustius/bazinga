@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Ww2-ra-IkA">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Poppins-MediumItalic.ttf">
+            <string>Poppins-MediumItalic</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Account Form-->
+        <scene sceneID="sk8-PN-uVH">
+            <objects>
+                <viewController id="Oii-aU-ULX" customClass="AccountForm" customModule="Bazinga_" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="R4s-NT-veP">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="80" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="C0p-S2-RMI">
+                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="AccountCell" id="SQ8-LE-7Wb">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="80"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="SQ8-LE-7Wb" id="uks-Lb-BXN">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="Oii-aU-ULX" id="twn-I9-fIV"/>
+                                    <outlet property="delegate" destination="Oii-aU-ULX" id="Ia2-3Z-nvo"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Y4y-zU-eSF" firstAttribute="bottom" secondItem="C0p-S2-RMI" secondAttribute="bottom" id="8h0-U2-auz"/>
+                            <constraint firstItem="C0p-S2-RMI" firstAttribute="top" secondItem="Y4y-zU-eSF" secondAttribute="top" id="BUh-la-SeT"/>
+                            <constraint firstItem="Y4y-zU-eSF" firstAttribute="trailing" secondItem="C0p-S2-RMI" secondAttribute="trailing" id="boZ-xu-j07"/>
+                            <constraint firstItem="C0p-S2-RMI" firstAttribute="leading" secondItem="Y4y-zU-eSF" secondAttribute="leading" id="rxl-QF-N7l"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Y4y-zU-eSF"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="mHt-00-ZZo">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="1OT-tf-NTx">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="2jk-lq-H7V" customClass="DesignableButton" customModule="Spring">
+                                <rect key="frame" x="249" y="5.5" width="110" height="33"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Poppins-MediumItalic" family="Poppins" pointSize="15"/>
+                                <state key="normal" title="+ Add Account">
+                                    <color key="titleColor" red="0.3452852964" green="0.77117645739999996" blue="0.62118428950000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fEm-Mu-f0D" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3415.1999999999998" y="879.31034482758628"/>
+        </scene>
+        <!--Account-->
+        <scene sceneID="Bne-I3-Wwp">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Ww2-ra-IkA" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Account" id="48Z-tu-r2g"/>
+                    <toolbarItems/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="pvf-54-rFM">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Oii-aU-ULX" kind="relationship" relationship="rootViewController" id="HKv-8O-WGB"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="M0J-Oy-kFd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2613.5999999999999" y="880.20989505247383"/>
+        </scene>
+    </scenes>
+</document>

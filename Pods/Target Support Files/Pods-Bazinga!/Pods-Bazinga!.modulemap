@@ -1,0 +1,6 @@
+framework module Pods_Bazinga_ {
+  umbrella header "Pods-Bazinga!-umbrella.h"
+
+  export *
+  module * { export * }
+}
