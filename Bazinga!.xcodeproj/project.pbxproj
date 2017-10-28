@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		06F48462695E6D937751C4A6 /* Pods_Bazinga_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA616E363B04962BB67C343F /* Pods_Bazinga_Tests.framework */; };
 		2703E88AA481FCC5EFED4EFB /* Pods_Bazinga_.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E664A26BC8564D9330C8F93 /* Pods_Bazinga_.framework */; };
+		27043DAB1FA475CC00C3A6E8 /* AddAccountForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27043DAA1FA475CC00C3A6E8 /* AddAccountForm.swift */; };
+		27043DAD1FA47E8C00C3A6E8 /* AddAccountTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27043DAC1FA47E8C00C3A6E8 /* AddAccountTableView.swift */; };
 		2705FBEA1F90BA3B003C3B42 /* Account.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2705FBE91F90BA3B003C3B42 /* Account.storyboard */; };
 		270A3A7A1F8519060072CC57 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 270A3A791F8519060072CC57 /* AppDelegate.swift */; };
 		270A3A7C1F8519060072CC57 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 270A3A7B1F8519060072CC57 /* ViewController.swift */; };
@@ -63,6 +65,8 @@
 
 /* Begin PBXFileReference section */
 		0EF10F38AA90C24DA60C3E56 /* Pods_Bazinga_UITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Bazinga_UITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		27043DAA1FA475CC00C3A6E8 /* AddAccountForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAccountForm.swift; sourceTree = "<group>"; };
+		27043DAC1FA47E8C00C3A6E8 /* AddAccountTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAccountTableView.swift; sourceTree = "<group>"; };
 		2705FBE91F90BA3B003C3B42 /* Account.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Account.storyboard; sourceTree = "<group>"; };
 		270A3A761F8519060072CC57 /* Bazinga!.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Bazinga!.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		270A3A791F8519060072CC57 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -200,6 +204,8 @@
 			isa = PBXGroup;
 			children = (
 				278561DB1F90B19D0010D232 /* AccountForm.swift */,
+				27043DAA1FA475CC00C3A6E8 /* AddAccountForm.swift */,
+				27043DAC1FA47E8C00C3A6E8 /* AddAccountTableView.swift */,
 			);
 			path = Account;
 			sourceTree = "<group>";
@@ -611,9 +617,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				2764566B1F90718F00BB612B /* Account.swift in Sources */,
+				27043DAB1FA475CC00C3A6E8 /* AddAccountForm.swift in Sources */,
 				270A3A7C1F8519060072CC57 /* ViewController.swift in Sources */,
 				276456691F8F70F100BB612B /* Constant.swift in Sources */,
 				270A3A7A1F8519060072CC57 /* AppDelegate.swift in Sources */,
+				27043DAD1FA47E8C00C3A6E8 /* AddAccountTableView.swift in Sources */,
 				270A3A821F8519060072CC57 /* Bazinga_.xcdatamodeld in Sources */,
 				278561DC1F90B19D0010D232 /* AccountForm.swift in Sources */,
 			);
