@@ -13,44 +13,12 @@ import CoreData
 class AccountForm: UIViewController
 {
     @IBOutlet var AccountTableView: UITableView!
-    var allAccount:NSFetchedResultsController<AccountDB> = NSFetchedResultsController()
-//    var tempData:[AccountDB] = []{
-//        didSet{
-//            DispatchQueue.main.async {
-//                self.AccountTableView.reloadData()
-//            }
-//        }
-//    }
+    var allAccount:NSFetchedResultsController<Account> = NSFetchedResultsController()
     
     //MARK:View cycle
     override func viewDidLoad() {
         
-        // get account data
-        if let managedContext = appDelegate?.persistentContainer.viewContext
-        {
-            do
-            {
-                let accountRequest:NSFetchRequest<AccountDB> = AccountDB.fetchRequest()
-                
-//                accountRequest.fetchBatchSize = 20
-                
-                let sortDescriptor = NSSortDescriptor(key: "name", ascending: false)
-                accountRequest.sortDescriptors = [sortDescriptor]
-                
-                let fetchedResultController = NSFetchedResultsController(fetchRequest: accountRequest,
-                                                                         managedObjectContext: managedContext,
-                                                                         sectionNameKeyPath: nil,
-                                                                         cacheName: nil)
-                fetchedResultController.delegate = self
-                try fetchedResultController.performFetch()
-
-                allAccount = fetchedResultController
-            }
-            catch let error as NSError
-            {
-                print("Could not fetch. \(error), \(error.userInfo)")
-            }
-        }
+        allAccount = SharedModel.shared.getAllAccount(delegate: self as NSFetchedResultsControllerDelegate)
     }
     
 }
@@ -85,48 +53,17 @@ extension AccountForm
             
             guard
                 let dvc = segue.destination as? AddAccountForm,
-                let selectedAccount = sender as? AccountDB
+                let selectedAccount = sender as? Account
                 else { print("error on \(#function), \(#line) "); return}
             
             dvc.currentAccount = selectedAccount
             dvc.usage = .edit
-
-//            let childContext = NSManagedObjectContext(concurrencyType: .mainQueueConcurrencyType)
-//            childContext.parent = coreDataStack.mainContext
-//
-//            let newJournalEntry = JournalEntry(context: childContext)
-//
-//            detailViewController.journalEntry = newJournalEntry
-//            detailViewController.context = childContext
-
         }
     }
     
     @IBAction func unwindToAccountForm(segue: UIStoryboardSegue) {
         if segue.identifier == "accountAdded" {
             
-//            guard
-//                let svc = segue.source as? AddAccountForm
-//                else { print("error on \(#function), \(#line) "); return}
-//
-//            if let managedContext = appDelegate?.persistentContainer.viewContext
-//            {
-//                let newAccountEntry = AccountDB(context: managedContext)
-//                newAccountEntry.name = svc.currentAccountName
-//
-//                managedContext.perform {
-//                    do{
-//                        try managedContext.save()
-//                    } catch let error as NSError {
-//                        fatalError("Error: \(error.localizedDescription)")
-//                    }
-//                }
-//            }
-
-            
-//            tempData.append(svc.currentAccountName)
-            
-
         }
     }
 }

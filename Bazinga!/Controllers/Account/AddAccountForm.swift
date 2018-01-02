@@ -18,19 +18,20 @@ class AddAccountForm:UIViewController
     @IBOutlet var button: UIButton!
     var currentAccountName = ""
     var usage:AddAccountFormUsage = .add
-    var currentAccount:AccountDB!
+    var currentAccount:Account!
     
-    override func viewDidLoad() {
+    override func viewDidAppear(_ animated: Bool) {
         switch usage {
         case .add:
             break
         case .edit:
             currentAccountName = currentAccount.name ?? ""
-            button.setTitle("- Delete", for: .normal)
+            button.setTitle("update", for: .normal)
             button.backgroundColor = UIColor.red
             break
         }
     }
+    
     
     @IBAction func buttonPressed(){
         switch usage {
@@ -38,7 +39,7 @@ class AddAccountForm:UIViewController
             
             if let managedContext = appDelegate?.persistentContainer.viewContext
             {
-                currentAccount = AccountDB(context: managedContext)
+                currentAccount = Account(context: managedContext)
                 currentAccount.name = currentAccountName
                 
                 managedContext.perform {
@@ -55,20 +56,15 @@ class AddAccountForm:UIViewController
             
             if let managedContext = appDelegate?.persistentContainer.viewContext
             {
+//                managedContext.delete(currentAccount)
                 currentAccount.name = currentAccountName
-                
-                managedContext.perform {
-                    do{
-                        try managedContext.save()
-                    } catch let error as NSError {
-                        fatalError("Error: \(error.localizedDescription)")
-                    }
-                }
             }
             
             
-//            performSegue(withIdentifier: "accountEdited", sender: self)
         }
+        
+        performSegue(withIdentifier: "accountEdited", sender: self)
+        
     }
 }
 

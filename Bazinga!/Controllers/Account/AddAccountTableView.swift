@@ -17,11 +17,11 @@ class AddAccountTableView:UITableViewController
 {
     //MARK: IBOutlet
     @IBOutlet var accountName: UITextField!
-    var currentAccount:AccountDB!
+    var currentAccount:Account!
     weak var delegate: AddAccountCellDelegate?
     
     override func viewDidLoad() {
-        accountName.text == currentAccount.name ?? ""
+//        accountName.text == currentAccount.name ?? ""
     }
     
     @IBAction func clearAccountName() {
