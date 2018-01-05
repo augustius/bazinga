@@ -1,0 +1,6 @@
+framework module Pods_Bazinga_UITests {
+  umbrella header "Pods-Bazinga!UITests-umbrella.h"
+
+  export *
+  module * { export * }
+}

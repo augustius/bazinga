@@ -11,8 +11,8 @@ import CoreData
 
 class ViewController: UIViewController {
     
-    var allAccount : [AccountDB] = []
-    var allSubAccount : [SubaccountDB] = []
+    var allAccount : [Account] = []
+    var allSubAccount : [SubAccount] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,7 +34,7 @@ class ViewController: UIViewController {
         let managedContext = appDelegate.persistentContainer.viewContext
         do
         {
-            allAccount = try managedContext.fetch(AccountDB.fetchRequest())
+            allAccount = try managedContext.fetch(Account.fetchRequest())
         }
         catch let error as NSError
         {
@@ -50,9 +50,9 @@ class ViewController: UIViewController {
         }
         
         let managedContext = appDelegate.persistentContainer.viewContext
-        let account = AccountDB(context: managedContext)
+        let account = Account(context: managedContext)
         account.name = name
-        if let subAccount = (account.childAccount as? [SubaccountDB])
+        if let subAccount = (account.childAccount as? [SubAccount])
         {
             for sub in subAccount
             {
@@ -63,7 +63,7 @@ class ViewController: UIViewController {
         appDelegate.saveContext()
     }
     
-    func deleteAccount(account:AccountDB)
+    func deleteAccount(account:Account)
     {
         guard let appDelegate =
             UIApplication.shared.delegate as? AppDelegate else {
